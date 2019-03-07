@@ -1,4 +1,7 @@
-# css-meter
+# css-meter or Loader depends on how you want to use it
+
+
+
 css meter gauge optimized for js customization by @codefingers . 
 
  get more from https://www.cssscript.com/creating-fast-and-responsive-gauges-with-pure-css/
