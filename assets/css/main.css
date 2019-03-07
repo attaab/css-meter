@@ -1,0 +1,103 @@
+    @-webkit-keyframes load {
+                0% {
+                    stroke-dashoffset:0
+                }
+    }
+    @-moz-keyframes  load {
+         0% {
+         stroke-dashoffset:0
+        }
+    }
+
+@keyframes load {
+     0% {
+        stroke-dashoffset:0
+        }
+    }
+
+    @-webkit-keyframes textLoad {
+        from {
+            opacity: 0.5;
+       }
+        to {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes  textLoad {
+        from {
+            opacity: 0.5;
+       }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes textLoad {
+       from {
+            opacity: 0.5;
+       }
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    /* this part controls the text in the loader the color especially */
+.progress>li {
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      color: #93A2AC;
+      font-family: Lato;
+      font-weight: 100;
+      margin: 2rem;
+    }
+    /* end of the part that controls the text in the loader the color especially */
+
+    .progress>li:before {
+      content: attr(data-name);
+      position: absolute;
+      width: 100%;
+      bottom: -2rem;
+      font-weight: 400;
+    }
+
+    .progress>li:after {
+      content: attr(data-percent);
+      position: absolute;
+      width: 100%;
+      top: 3.7rem;
+      left: 0;
+      font-size: 2rem;
+      text-align: center;
+      animation: textLoad 2s;
+    }
+
+    .progress svg {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .progress svg:nth-child(2) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+    }
+
+    .progress svg:nth-child(2) path {
+      fill: none;
+      /* stroke-width: 25; */
+      stroke-width: 5;
+      stroke-dasharray: 629;
+      /* stroke: rgba(255, 255, 255, 0.9); */
+      stroke: #2196F3;
+      -webkit-animation: load 3s;
+      -moz-animation: load 3s;
+       -o-animation: load 3s;
+         animation: load 3s;
+    }
+    
