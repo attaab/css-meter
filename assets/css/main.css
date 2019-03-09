@@ -18,26 +18,32 @@
     @-webkit-keyframes textLoad {
         from {
             opacity: 0.5;
+            height: 0;
        }
         to {
             opacity: 1;
+            height: 100%;
         }
     }
     @-moz-keyframes  textLoad {
         from {
-            opacity: 0.5;
+            opacity: 0;
+            height: 0;
        }
         to {
             opacity: 1;
+            height: 100%;
         }
     }
 
     @keyframes textLoad {
-       from {
+        from {
             opacity: 0.5;
+            height: 0;
        }
         to {
             opacity: 1;
+            height: 100%;
         }
     }
 
@@ -88,6 +94,8 @@
       -ms-transform: rotate(-90deg);
     }
 
+
+    /* this part of the loader controls the apperance of the bar especially the color */
     .progress svg:nth-child(2) path {
       fill: none;
       /* stroke-width: 25; */
@@ -100,4 +108,4 @@
        -o-animation: load 3s;
          animation: load 3s;
     }
-    
+    /* end of the part of the loader controls the apperance of the bar especially the color */
