@@ -1,111 +1,74 @@
-    @-webkit-keyframes load {
-                0% {
-                    stroke-dashoffset:0
-                }
-    }
-    @-moz-keyframes  load {
-         0% {
-         stroke-dashoffset:0
-        }
-    }
+html, body {
+  height: 100%;
+}
 
-@keyframes load {
-     0% {
-        stroke-dashoffset:0
-        }
-    }
+body {
+  background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #B7E8EB 100%);
+  overflow: hidden;
+}
 
-    @-webkit-keyframes textLoad {
-        from {
-            opacity: 0.5;
-            height: 0;
-       }
-        to {
-            opacity: 1;
-            height: 100%;
-        }
-    }
-    @-moz-keyframes  textLoad {
-        from {
-            opacity: 0;
-            height: 0;
-       }
-        to {
-            opacity: 1;
-            height: 100%;
-        }
-    }
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+}
 
-    @keyframes textLoad {
-        from {
-            opacity: 0.5;
-            height: 0;
-       }
-        to {
-            opacity: 1;
-            height: 100%;
-        }
-    }
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+          animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
 
+.wave:nth-of-type(2) {
+  top: -175px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+          animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
 
-    /* this part controls the text in the loader the color especially */
-.progress>li {
-      display: inline-block;
-      position: relative;
-      text-align: center;
-      color: #93A2AC;
-      font-family: Lato;
-      font-weight: 100;
-      margin: 2rem;
-    }
-    /* end of the part that controls the text in the loader the color especially */
+@-webkit-keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
 
-    .progress>li:before {
-      content: attr(data-name);
-      position: absolute;
-      width: 100%;
-      bottom: -2rem;
-      font-weight: 400;
-    }
-
-    .progress>li:after {
-      content: attr(data-percent);
-      position: absolute;
-      width: 100%;
-      top: 3.7rem;
-      left: 0;
-      font-size: 2rem;
-      text-align: center;
-      animation: textLoad 2s;
-    }
-
-    .progress svg {
-      width: 10rem;
-      height: 10rem;
-    }
-
-    .progress svg:nth-child(2) {
-      position: absolute;
-      left: 0;
-      top: 0;
-      transform: rotate(-90deg);
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-    }
-
-
-    /* this part of the loader controls the apperance of the bar especially the color */
-    .progress svg:nth-child(2) path {
-      fill: none;
-      /* stroke-width: 25; */
-      stroke-width: 5;
-      stroke-dasharray: 629;
-      /* stroke: rgba(255, 255, 255, 0.9); */
-      stroke: #2196F3;
-      -webkit-animation: load 3s;
-      -moz-animation: load 3s;
-       -o-animation: load 3s;
-         animation: load 3s;
-    }
-    /* end of the part of the loader controls the apperance of the bar especially the color */
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@-webkit-keyframes swell {
+  0%, 100% {
+    -webkit-transform: translate3d(0, -25px, 0);
+            transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+}
+@keyframes swell {
+  0%, 100% {
+    -webkit-transform: translate3d(0, -25px, 0);
+            transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+}
